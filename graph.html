@@ -1,0 +1,35 @@
+<html>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css">  
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js"></script>
+    
+    <body>
+        <div id="chart"></div>
+    </body>
+
+    <script>
+        /*var chart = c3.generate({
+            bindto: '#chart',
+            data: {
+                
+                url: 'out.csv',
+                type: 'line'
+            }
+        });
+        chart.load({
+            url: 'out.csv'
+        });*/
+        d3.csv("./out.csv")
+            .row(function(d) { 
+                console.log(d);
+
+            var chart = c3.generate({
+                data: {
+                    rows: d,
+                    type: 'line'
+                },
+            });
+        });
+    </script>  
+
+</html>
